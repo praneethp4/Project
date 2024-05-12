@@ -1,0 +1,85 @@
+{% extends 'adminheader.html'%} {% block content %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <!-- Start Home Page Slider -->
+    <section id="page-top">
+      <!-- Carousel -->
+      <div id="main-slide" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#main-slide" data-slide-to="0" class="active"></li>
+        </ol>
+        <!--/ Indicators end-->
+
+        <!-- Carousel inner -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img
+              class="img-responsive"
+              src="/static/images/blur1.jpg"
+              alt="slider"
+            />
+            <div class="slider-content">
+              <!-- Start Predict Section -->
+              <section id="predict" class="predict-section">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="section-title text-center">
+                        <h2>Drug Predictor</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                      <div class="predict-form">
+                        <form action="/predict" method="post">
+                          <div class="form-group">
+                            <label for="symptoms">Enter the extracted Text:</label>
+                            <textarea
+                              class="form-control"
+                              id="symptoms"
+                              name="symptoms"
+                              rows="4"
+                              cols="50"
+                            ></textarea>
+                          </div>
+                          <button type="submit" class="btn btn-primary">
+                            Predict
+                          </button>
+                        </form>
+                        <div class="prediction-result">
+                          {% if prediction %}
+                          <p>Drug for the patient: {{ prediction }}</p>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <!--/ Carousel item end -->
+        </div>
+        <!-- Carousel inner end-->
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#main-slide" data-slide="prev">
+          <span><i class="fa fa-angle-left"></i></span>
+        </a>
+        <a class="right carousel-control" href="#main-slide" data-slide="next">
+          <span><i class="fa fa-angle-right"></i></span>
+        </a>
+      </div>
+      <!-- /carousel -->
+    </section>
+    <!-- End Home Page Slider -->
+
+    <!-- End Predict Section -->
+  </body>
+</html>
+{% endblock %}

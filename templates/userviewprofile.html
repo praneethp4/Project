@@ -1,0 +1,51 @@
+{% extends 'userheader.html'%}
+{% block content %}
+ 
+
+<!-- Start About Us Section -->
+<section id="about-us" class="about-us-section-1" style="background-image: url('/static/images/blur1.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title text-center">
+                    <h3>User View Profile</h3>
+                    <p>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th>User Id</th>
+                            <td>{{row.id}}</td>
+                        </tr>
+                        <tr>
+                            <th>First Name</th>
+                            <td>{{row.FirstName}}</td>
+                        </tr>
+                        <tr>
+                            <th>Last Name</th>
+                            <td>{{row.LastName}}</td>
+                        </tr>
+                        <tr>
+                            <th>EmailId</th>
+                            <td>{{row.EmailId}}</td>
+                        </tr>
+                        <tr>
+                            <th>Phone Number</th>
+                            <td>{{row.PhoneNumber}}</td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td>{{row.Address}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.container -->
+</section>
+<!-- End About Us Section -->
+
+</body>
+</html>
+{% endblock %}

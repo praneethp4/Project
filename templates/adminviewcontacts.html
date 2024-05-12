@@ -1,0 +1,44 @@
+{% extends 'adminheader.html'%}
+{% block content %}
+ 
+    <!-- Start About Us Section -->
+    <section id="about-us" class="about-us-section-1" style="background-image: url('/static/images/blur1.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="section-title text-center">
+                            <h3>Admin View Contacts</h3>
+                            <p>
+<table>
+                    <thead>
+                    <tr>
+                        <th>Contact Id</th>
+                        <th>Contact Name</th>
+                        <th>EmailId</th>
+                        <th>PhoneNumber</th>
+                        <th>Message</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in data %}
+                    <tr>
+                        <td>{{row.id}}</td>
+                        <td>{{row.ContactName}}</td>
+                        <td>{{row.EmailId}}</td>
+                        <td>{{row.PhoneNumber}}</td>
+                        <td>{{row.Message}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                            </p>
+                        </div>
+                </div>
+            </div>
+        </div><!-- /.container -->
+    </section>
+    <!-- End About Us Section -->
+
+</body>
+</html>
+{% endblock %}

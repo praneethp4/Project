@@ -1,0 +1,97 @@
+{% extends 'commonheader.html'%}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+   
+
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <h3>Contact With Us</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 style="color:white;">
+                    {{msg}}
+                        </h3>
+                    <form name="sentMessage" id="contactForm" action="/contact" method="post">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="cname" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="phnum" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number."
+                                    maxlength="10">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."
+                                    name="message"></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <input type="submit" class="btn btn-primary" value="Send Message">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-contact-info">
+                        <h4>Contact info</h4>
+                        <ul>
+                            <li><strong>E-mail :</strong> praneeth-email@mail.com</li>
+                            <li><strong>Phone :</strong> +9515895546</li>
+                            
+                            <li><strong>Web :</strong> web.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="footer-contact-info">
+                        <h4>Working Hours</h4>
+                        <ul>
+                            <li><strong>Monday-Friday :</strong> 9 am to 5 pm</li>
+                           
+                            <li><strong>Saturday :</strong> 9 am to 3 pm</li>
+                            <li><strong>Sunday :</strong> Closed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="style-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-12">
+                         
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'adminheader.html'%}
+{% block content %}
+ 
+    <!-- Start About Us Section -->
+    <section id="about-us" class="about-us-section-1" style="background-image: url('/static/images/blur1.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="section-title text-center">
+                            <h3>Admin View Prescriptions</h3>
+                            <p>
+<table>
+                    <thead>
+                    <tr>
+                        <th>Prescription Id</th>
+                        <th>User Id</th>
+                        <th>Doctor Name</th>
+                        <th>Hospital Name</th>
+                        <th>Reason</th>
+                        <th>Comments</th>
+                        <th>FileName1</th>
+                        <th>FileName2</th>
+                        <th>FileName3</th>
+                        <th>ResultFile</th>
+                        <th>View Prescription</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in data %}
+                    <tr>
+                        <td>{{row.id}}</td>
+                        <td>{{row.UserId}}</td>
+                        <td>{{row.HospitalName}}</td>
+                        <td>{{row.DoctorName}}</td>
+                        <td>{{row.Reason}}</td>
+                        <td>{{row.Comments}}</td>
+                        {% if row.File1 %}
+                        <td>
+                            <a href="/static/uploads/{{row.File1}}" target="_blank">Download File1</a>
+                        </td>
+                        {% endif %}
+                        {% if row.File2 %}
+                        <td>
+                            <a href="/static/uploads/{{row.File2}}" target="_blank">Download File2</a>
+                        </td>
+                        {% endif %}
+                        {% if row.File2 == None %}
+                        <td>{{row.File2}}</td>
+                        {% endif %}
+                        {% if row.File3 %}
+                        <td>
+                            <a href="/static/uploads/{{row.File3}}" target="_blank">Download File3</a>
+                        </td>
+                        {% endif %}
+                        {% if row.File3 == None %}
+                        <td>{{row.File3}}</td>
+                        {% endif %}
+                        <td>
+                            <a href="/static/uploads/{{row.Result_Filename}}" target="_blank">Download File</a>
+                        </td>
+                        <td>
+                            <a href="/adminviewdetails?filename={{row.Result_Filename}}">View Details</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                            </p>
+                        </div>
+                </div>
+            </div>
+        </div><!-- /.container -->
+    </section>
+    <!-- End About Us Section -->
+
+</body>
+</html>
+{% endblock %}
